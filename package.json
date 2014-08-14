@@ -1,0 +1,25 @@
+{
+  "name": "fixed-2d-array",
+  "version": "0.0.0",
+  "description": "A fixed size 2D array in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "jshint": "jshint test/* lib/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tillarnold/fixed-2d-array"
+  },
+  "keywords": [
+    "array",
+    "fixed",
+    "2d"
+  ],
+  "author": "Till Arnold",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.5.3",
+    "tape": "^2.14.0"
+  }
+}
