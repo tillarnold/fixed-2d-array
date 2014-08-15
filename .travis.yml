@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "0.10"
 install: npm install
-script: npm run jshint && npm test
+script: npm run jshint && npm run test-coveralls
