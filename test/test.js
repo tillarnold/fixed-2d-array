@@ -16,8 +16,18 @@ test('get and set', function (t) {
 });
 
 test('exception on index out of bounds', function (t) {
-  t.plan(2);
+  t.plan(3);
   var fa = new fixedArray(10,10);
   t.throws(function(){fa.get(10,10);});
   t.throws(function(){fa.get(-1,-1);});
+  t.throws(function(){fa.getNeighbours(-1,-1);});
 });
+
+test('get correct number of neighbours',function (t) {
+  t.plan(3); 
+  var fa = new fixedArray(10,10);
+  t.equal(fa.getNeighbours(5,5).length,8);
+  t.equal(fa.getNeighbours(0,0).length,3);
+  t.equal(fa.getNeighbours(1,0).length,5);
+});
+
