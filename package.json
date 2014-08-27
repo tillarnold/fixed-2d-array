@@ -1,6 +1,6 @@
 {
   "name": "fixed-2d-array",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A fixed size 2D array in javascript",
   "main": "index.js",
   "scripts": {
