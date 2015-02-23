@@ -13,7 +13,7 @@
 This module gives you a two-dismesional array with a fixed size. 
 
 ## Fixed2DArray(width,height,defaultValue)
-`width` is the width of the array and `height` is the height of the array. (Thats kinda obvious, isn't it?)
+`width` is the width of the array and `height` is the height of the array. (That's kinda obvious, isn't it?)
 During the creation of the array the `defaultValue` will be asigned to all elements.
 
 ### validateCoords(x, y)
