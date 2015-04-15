@@ -6,25 +6,23 @@
 [![Code Climate](https://codeclimate.com/github/tillarnold/fixed-2d-array/badges/gpa.svg)](https://codeclimate.com/github/tillarnold/fixed-2d-array)
 
 
+> A fixed size 2D array in JavaScript
 
+This module gives you a two-dimensional array with a fixed size.
 
-> A fixed size 2D array in javascript
-
-This module gives you a two-dismesional array with a fixed size.
-
-## Fixed2DArray(width,height,defaultValue)
+## Fixed2DArray(width, height, defaultValue)
 `width` is the width of the array and `height` is the height of the array. (That's kinda obvious, isn't it?)
 During the creation of the array the `defaultValue` will be asigned to all elements.
 
 ### validateCoords(x, y)
 The `validateCoords` method checks if the given coordinates are valid. (lie inside of the array)
-If the coordinates are *not* valid a `Error` is thrown.
+If the coordinates are *not* valid an `Error` is thrown.
 
 ### get(x, y)
-Returns the value of the given coordinate. The coordinate is checked using  `validateCoords`.
+Returns the value of the given coordinate. The coordinate is checked using `validateCoords`.
 
 ### set(x, y, value)
-Sets the value of the given coordinate to `value`. The coordinate is checked using  `validateCoords`.
+Sets the value of the given coordinate to `value`. The coordinate is checked using `validateCoords`.
 
 ### getHeight()
 Returns the height of the array.
