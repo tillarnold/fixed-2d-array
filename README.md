@@ -10,14 +10,14 @@
 
 > A fixed size 2D array in javascript
 
-This module gives you a two-dismesional array with a fixed size. 
+This module gives you a two-dismesional array with a fixed size.
 
 ## Fixed2DArray(width,height,defaultValue)
 `width` is the width of the array and `height` is the height of the array. (That's kinda obvious, isn't it?)
 During the creation of the array the `defaultValue` will be asigned to all elements.
 
 ### validateCoords(x, y)
-The `validateCoords` method checks if the given coordinates are valid. (lie inside of the array)  
+The `validateCoords` method checks if the given coordinates are valid. (lie inside of the array)
 If the coordinates are *not* valid a `Error` is thrown.
 
 ### get(x, y)
@@ -25,6 +25,12 @@ Returns the value of the given coordinate. The coordinate is checked using  `val
 
 ### set(x, y, value)
 Sets the value of the given coordinate to `value`. The coordinate is checked using  `validateCoords`.
+
+### getHeight()
+Returns the height of the array.
+
+### getWidth()
+Returns the width of the array.
 
 ### getNeighbours(x, y)
 Returns an array containing all values of the cells next to the given coordinate.
