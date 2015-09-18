@@ -32,10 +32,14 @@ test('exception on index out of bounds', function (t) {
 });
 
 test('get correct number of neighbours',function (t) {
-  t.plan(3);
+  t.plan(7);
   var fa = new fixedArray(10,10);
   t.equal(fa.getNeighbours(5,5).length,8);
   t.equal(fa.getNeighbours(0,0).length,3);
   t.equal(fa.getNeighbours(1,0).length,5);
+  t.equal(fa.getNeighbours(0,0,2).length,8);
+  t.equal(fa.getNeighbours(2,2,2).length,24);
+  t.equal(fa.getNeighbours(2,2,0).length,0);
+  t.equal(fa.getNeighbours(2,2,-2).length,0);
 });
 
