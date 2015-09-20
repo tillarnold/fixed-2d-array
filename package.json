@@ -20,9 +20,9 @@
   "author": "Till Arnold",
   "license": "MIT",
   "devDependencies": {
-    "jshint": "^2.5.3",
-    "tape": "^4.0.0",
-    "istanbul": "~0.3.0",
-    "coveralls": "~2.11.1"
+    "jshint": "^2.8.0",
+    "tape": "^4.2.0",
+    "istanbul": "~0.3.20",
+    "coveralls": "~2.11.4"
   }
 }
