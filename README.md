@@ -36,5 +36,27 @@ Returns the height of the array.
 ### getWidth()
 Returns the width of the array.
 
-### getNeighbours(x, y)
+### getNeighbours(x, y, [, distance])
 Returns an array containing all values of the cells next to the given coordinate.
+
+For example, distance not set:
+```
+[ ][ ][ ][ ][ ]
+[ ][*][*][*][ ]
+[ ][*][X][*][ ]
+[ ][*][*][*][ ]
+[ ][ ][ ][ ][ ]
+```
+
+The given coordinate is marked with an `X`. The function will return an array containing the values for the fields marked with an `*`.
+
+Example, distance = 2:
+```
+[*][*][*][*][*]
+[*][*][*][*][*]
+[*][*][X][*][*]
+[*][*][*][*][*]
+[*][*][*][*][*]
+```
+
+The function will return an array containing the values for the fields marked with an '*'. Notice that distance will change what cells count as neighbors.
