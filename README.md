@@ -21,6 +21,12 @@ If the coordinates are *not* valid an `Error` is thrown.
 ### get(x, y)
 Returns the value of the given coordinate. The coordinate is checked using `validateCoords`.
 
+### getRow(rowNumber)
+Returns an array of the requested row.
+
+### getColumn(colNumber)
+Returns an array of the requested column.
+
 ### set(x, y, value)
 Sets the value of the given coordinate to `value`. The coordinate is checked using `validateCoords`.
 
