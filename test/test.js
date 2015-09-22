@@ -23,6 +23,32 @@ test('get and set', function (t) {
   t.equal(fa.get(9,7),'This is a string!');
 });
 
+test('get correct row and column',function (t) {
+  t.plan(6);
+  var fa = new fixedArray(10,10);
+
+  t.equal(fa.getRow(0).length,10);
+  t.equal(fa.getColumn(1).length,10);
+
+  fa.set(0,1,'This is a string!');
+  t.equal(fa.getRow(0)[1],'This is a string!');
+  t.equal(fa.getColumn(1)[0],'This is a string!');
+  t.throws(function(){fa.getRow(-1);});
+  t.throws(function(){fa.getColumn(11);});
+});
+
+test('forEach',function (t) {
+  t.plan(1);
+  var fa = new fixedArray(10,10,0);
+
+  function fun(currentValue, index, array){
+    array.set(index.x, index.y, currentValue+1);
+  }
+
+  fa.forEach(fun);
+  t.equal(fa.get(0,0),1);
+});
+
 test('exception on index out of bounds', function (t) {
   t.plan(3);
   var fa = new fixedArray(10,10);

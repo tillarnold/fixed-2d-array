@@ -21,6 +21,12 @@ If the coordinates are *not* valid an `Error` is thrown.
 ### get(x, y)
 Returns the value of the given coordinate. The coordinate is checked using `validateCoords`.
 
+### getRow(rowNumber)
+Returns an array of the requested row.
+
+### getColumn(colNumber)
+Returns an array of the requested column.
+
 ### set(x, y, value)
 Sets the value of the given coordinate to `value`. The coordinate is checked using `validateCoords`.
 
@@ -30,5 +36,42 @@ Returns the height of the array.
 ### getWidth()
 Returns the width of the array.
 
-### getNeighbours(x, y)
+### getNeighbours(x, y, [, distance])
 Returns an array containing all values of the cells next to the given coordinate.
+
+For example, distance not set:
+```
+[ ][ ][ ][ ][ ]
+[ ][*][*][*][ ]
+[ ][*][X][*][ ]
+[ ][*][*][*][ ]
+[ ][ ][ ][ ][ ]
+```
+
+The given coordinate is marked with an `X`. The function will return an array containing the values for the fields marked with an `*`.
+
+Example, distance = 2:
+```
+[*][*][*][*][*]
+[*][*][*][*][*]
+[*][*][X][*][*]
+[*][*][*][*][*]
+[*][*][*][*][*]
+```
+
+The function will return an array containing the values for the fields marked with an '*'. Notice that distance will change what cells count as neighbors.
+
+### forEach(fn, [, thisArg])
+Executes a provided function once per array element.
+
+`fn` is the function to execute for each element, taking three arguments: 
+
+  currentValue
+    The current element being processed in the array.
+  index
+    The object index, {x: x, y: y}, of the current element being processed in the 2d array.
+  array
+    The Fixed2DArray that forEach is being applied to. 
+
+  thisArg 
+    Optional. Value to use as this when executing callback.
