@@ -37,6 +37,18 @@ test('get correct row and column',function (t) {
   t.throws(function(){fa.getColumn(11);});
 });
 
+test('forEach',function (t) {
+  t.plan(1);
+  var fa = new fixedArray(10,10,0);
+
+  function fun(currentValue, index, array){
+    array.set(index.x, index.y, currentValue+1);
+  }
+
+  fa.forEach(fun);
+  t.equal(fa.get(0,0),1);
+});
+
 test('exception on index out of bounds', function (t) {
   t.plan(3);
   var fa = new fixedArray(10,10);
