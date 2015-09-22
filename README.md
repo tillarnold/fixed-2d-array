@@ -30,6 +30,5 @@ Returns the height of the array.
 ### getWidth()
 Returns the width of the array.
 
-### getNeighbours(x, y, distance)
+### getNeighbours(x, y)
 Returns an array containing all values of the cells next to the given coordinate.
-`distance` is the length of the neighbor-square around the given coordinate.
