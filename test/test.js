@@ -69,3 +69,14 @@ test('get correct number of neighbours',function (t) {
   t.equal(fa.getNeighbours(2,2,-2).length,0);
 });
 
+test('areNeighbors',function (t) {
+  t.plan(6);
+  var fa = new fixedArray(10,10);
+  t.true(fa.areNeighbours(0,0,1,1));
+  t.false(fa.areNeighbours(0,0,2,2));
+  t.true(fa.areNeighbours(0,0,2,2,2));
+  t.throws(function(){fa.areNeighbours(-1,-1,0,0);});
+  t.throws(function(){fa.areNeighbours(0,0,-1,1);});
+  t.equal(fa.areNeighbours(0,0,1,1,0),false);
+});
+
