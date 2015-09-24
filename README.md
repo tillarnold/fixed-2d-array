@@ -65,13 +65,7 @@ The function will return an array containing the values for the fields marked wi
 Executes a provided function once per array element.
 
 `fn` is the function to execute for each element, taking three arguments: 
-
-  currentValue
-    The current element being processed in the array.
-  index
-    The object index, {x: x, y: y}, of the current element being processed in the 2d array.
-  array
-    The Fixed2DArray that forEach is being applied to. 
-
-  thisArg 
-    Optional. Value to use as this when executing callback.
+  * `currentValue`: The current element being processed in the array.
+  * `index`: The object index, {x: x, y: y}, of the current element being processed in the 2d array.
+  * `array`: The Fixed2DArray that forEach is being applied to. 
+  * `thisArg`: Optional. Value to use as this when executing callback.
