@@ -45,7 +45,7 @@ test('set row and column',function (t) {
   fa.setRow(0,newPillar);
   t.deepEqual(fa.getRow(0),newPillar);
   fa.setColumn(0,newPillar);
-  t.deepEqual(fa.getColumn(0),newPillar,console.log(fa._grid));
+  t.deepEqual(fa.getColumn(0),newPillar);
 
   t.throws(function(){fa.setRow(-1,newPillar);});
   t.throws(function(){fa.setColumn(-1,newPillar);});
