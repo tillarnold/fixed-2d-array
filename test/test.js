@@ -57,6 +57,18 @@ test('exception on index out of bounds', function (t) {
   t.throws(function(){fa.getNeighbours(-1,-1);});
 });
 
+test('sameSize',function (t) {
+  t.plan(3);
+  var fa = new fixedArray(2,2);
+  var faSameSize = new fixedArray(2,2);
+  var faNotSameSize = new fixedArray(2,3);
+  var nonfa = [2,2,2,2];
+
+  t.true(fa.sameSize(faSameSize));
+  t.false(fa.sameSize(faNotSameSize));
+  t.throws(function(){fa.sameSize(nonfa);});
+});
+
 test('get correct number of neighbours',function (t) {
   t.plan(7);
   var fa = new fixedArray(10,10);
@@ -79,4 +91,3 @@ test('areNeighbors',function (t) {
   t.throws(function(){fa.areNeighbours(0,0,-1,1);});
   t.equal(fa.areNeighbours(0,0,1,1,0),false);
 });
-
