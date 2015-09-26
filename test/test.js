@@ -37,6 +37,30 @@ test('get correct row and column',function (t) {
   t.throws(function(){fa.getColumn(11);});
 });
 
+test('set row and column',function (t) {
+  t.plan(8);
+  var fa = new fixedArray(5,5,0);
+  var newPillar = [1,2,3,4,5];
+
+  fa.setRow(0,newPillar);
+  t.deepEqual(fa.getRow(0),newPillar);
+  fa.setColumn(0,newPillar);
+  t.deepEqual(fa.getColumn(0),newPillar,console.log(fa._grid));
+
+  t.throws(function(){fa.setRow(-1,newPillar);});
+  t.throws(function(){fa.setColumn(-1,newPillar);});
+
+  var smallPillar = [1,2];
+  fa.setRow(0,smallPillar);
+  t.equal(fa.getRow(0)[3],undefined);
+  fa.setColumn(0,smallPillar);
+  t.equal(fa.getColumn(0)[3],undefined);
+
+  var largePillar = [1,2,3,4,5,6];
+  t.throws(function(){fa.setRow(0,largePillar);});
+  t.throws(function(){fa.setColumn(0,largePillar);});
+});
+
 test('forEach',function (t) {
   t.plan(1);
   var fa = new fixedArray(10,10,0);
