@@ -25,10 +25,10 @@ test('get and set', function (t) {
 
 test('get correct row and column',function (t) {
   t.plan(6);
-  var fa = new fixedArray(10,10);
+  var fa = new fixedArray(2,3);
 
-  t.equal(fa.getRow(0).length,10);
-  t.equal(fa.getColumn(1).length,10);
+  t.equal(fa.getRow(0).length,3);
+  t.equal(fa.getColumn(1).length,2);
 
   fa.set(0,1,'This is a string!');
   t.equal(fa.getRow(0)[1],'This is a string!');
