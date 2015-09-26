@@ -21,14 +21,20 @@ If the coordinates are *not* valid an `Error` is thrown.
 ### get(x, y)
 Returns the value of the given coordinate. The coordinate is checked using `validateCoords`.
 
-### getRow(rowNumber)
+### getRow(rowIndex)
 Returns an array of the requested row.
 
-### getColumn(colNumber)
+### getColumn(colIndex)
 Returns an array of the requested column.
 
 ### set(x, y, value)
 Sets the value of the given coordinate to `value`. The coordinate is checked using `validateCoords`.
+
+### setRow(rowIndex, array)
+Sets values of the given array as the values of the specified row.
+
+### setColumn(colIndex, array)
+Sets values of the given array as the values of the specified column.
 
 ### getHeight()
 Returns the height of the array.
