@@ -117,3 +117,12 @@ test('areNeighbors',function (t) {
   t.throws(function(){fa.areNeighbours(0,0,-1,1);});
   t.equal(fa.areNeighbours(0,0,1,1,0),false);
 });
+
+test('pushRow',function (t) {
+  t.plan(4);
+  var fa = new fixedArray(2,3);
+  t.equal(fa.pushRow([1,2,3],[1,2]),4);
+  t.equal(fa.get(3,2),undefined);
+  t.throws(function(){fa.pushRow([1,2,3,4]);});
+  t.equal(fa.pushRow(2),4);
+});

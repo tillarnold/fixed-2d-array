@@ -33,6 +33,15 @@ Sets the value of the given coordinate to `value`. The coordinate is checked usi
 ### setRow(rowIndex, array)
 Sets values of the given array as the values of the specified row.
 
+### pushRow([array1, array2, ..., arrayN])
+Adds one or more arrays as rows to the bottom of the Fixed2DArray.
+Returns the new width of the Fixed2DArray.
+
+Only arguments that are arrays will be appended as rows.
+
+If the given array is smaller then the height of the Fixed2DArray, `undefined` will fill
+the given array until it is the same length as the current row.
+
 ### setColumn(colIndex, array)
 Sets values of the given array as the values of the specified column.
 
