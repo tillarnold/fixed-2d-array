@@ -8,17 +8,17 @@
 
 > A fixed size 2D array in JavaScript
 
-This module gives you a two-dimensional array with a fixed size.
+This module gives you a two-dimensional array with a fixed size. The top left coordinate is (0,0).
 
-## Fixed2DArray(width, height, defaultValue)
-`width` is the width of the array and `height` is the height of the array. (That's kinda obvious, isn't it?)
-During the creation of the array the `defaultValue` will be asigned to all elements.
+## Fixed2DArray(rows, columns, defaultValue)
+`rows` is the number of rows the Fixed2DArray will start with, `columns` is the columns.
+During the creation of the array the `defaultValue` will be assigned to all elements.
 
-### validateCoords(x, y)
+### validateCoords(row, col)
 The `validateCoords` method checks if the given coordinates are valid. (lie inside of the array)
 If the coordinates are *not* valid an `Error` is thrown.
 
-### get(x, y)
+### get(row, col)
 Returns the value of the given coordinate. The coordinate is checked using `validateCoords`.
 
 ### getRow(rowIndex)
@@ -27,7 +27,7 @@ Returns an array of the requested row.
 ### getColumn(colIndex)
 Returns an array of the requested column.
 
-### set(x, y, value)
+### set(row, col, value)
 Sets the value of the given coordinate to `value`. The coordinate is checked using `validateCoords`.
 
 ### setRow(rowIndex, array)
@@ -37,12 +37,12 @@ Sets values of the given array as the values of the specified row.
 Sets values of the given array as the values of the specified column.
 
 ### getHeight()
-Returns the height of the array.
+The number of rows corresponds with the height.
 
 ### getWidth()
-Returns the width of the array.
+The number of columns corresponds to the width.
 
-### getNeighbours(x, y, [, distance])
+### getNeighbours(row, col, [, distance])
 Returns an array containing all values of the cells next to the given coordinate.
 
 For example, distance not set:
@@ -67,7 +67,7 @@ Example, distance = 2:
 
 The function will return an array containing the values for the fields marked with an '*'. Notice that distance will change what cells count as neighbors.
 
-### areNeighbours(x1, y1, x2, y2, [, distance])
+### areNeighbours(row1, col1, row2, col2, [, distance])
 Returns true if the given coordinates are neighbors, false otherwise.
 
 The distance between each coordinate must be within `distance` or one unit away from each other for the
