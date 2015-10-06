@@ -96,13 +96,15 @@ test('sameSize',function (t) {
 });
 
 test('get correct number of neighbours',function (t) {
-  t.plan(7);
+  t.plan(8);
   var fa = new fixedArray(9,10);
+  var treatMeLikeANumber = 2;
   t.equal(fa.getNeighbours(5,5).length,8);
   t.equal(fa.getNeighbours(0,0).length,3);
   t.equal(fa.getNeighbours(1,0).length,5);
   t.equal(fa.getNeighbours(0,0,2).length,8);
   t.equal(fa.getNeighbours(2,2,2).length,24);
+  t.equal(fa.getNeighbours(treatMeLikeANumber,treatMeLikeANumber,treatMeLikeANumber).length,24);
   t.equal(fa.getNeighbours(2,2,0).length,0);
   t.equal(fa.getNeighbours(2,2,-2).length,0);
 });
