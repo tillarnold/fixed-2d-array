@@ -1,17 +1,17 @@
 var test = require('tape');
-var fixedArray = require('..');
+var FixedArray = require('..');
 
 test('Default values', function (t) {
   t.plan(3);
-  var fa = new fixedArray(8,9,{abc:123});
+  var fa = new FixedArray(8,9,{abc:123});
   t.equal(fa.get(7,8).abc,123);
   t.equal(fa.get(0,1).abc,123);
-  t.throws(function(){new fixedArray(0,1);});
+  t.throws(function(){new FixedArray(0,1);});
 });
 
 test('getHeight and getWidth', function (t) {
   t.plan(2);
-  var fa = new fixedArray(3,17);
+  var fa = new FixedArray(3,17);
 
   t.equal(fa.getHeight(),3);
   t.equal(fa.getWidth(),17);
@@ -19,7 +19,7 @@ test('getHeight and getWidth', function (t) {
 
 test('get and set', function (t) {
   t.plan(3);
-  var fa = new fixedArray(2,3);
+  var fa = new FixedArray(2,3);
   fa.set(1,2,'This is a string!');
   t.equal(fa.get(1,2),'This is a string!');
   t.throws(function(){fa.set(2,3);});
@@ -28,7 +28,7 @@ test('get and set', function (t) {
 
 test('get correct row and column',function (t) {
   t.plan(6);
-  var fa = new fixedArray(2,3);
+  var fa = new FixedArray(2,3);
 
   t.equal(fa.getRow(0).length,3);
   t.equal(fa.getColumn(1).length,2);
@@ -42,7 +42,7 @@ test('get correct row and column',function (t) {
 
 test('set row and column',function (t) {
   t.plan(8);
-  var fa = new fixedArray(5,5,0);
+  var fa = new FixedArray(5,5,0);
   var newPillar = [1,2,3,4,5];
 
   fa.setRow(0,newPillar);
@@ -66,7 +66,7 @@ test('set row and column',function (t) {
 
 test('forEach',function (t) {
   t.plan(1);
-  var fa = new fixedArray(10,9,0);
+  var fa = new FixedArray(10,9,0);
 
   function fun(currentValue, index, array){
     array.set(index.x, index.y, currentValue+1);
@@ -78,16 +78,16 @@ test('forEach',function (t) {
 
 test('exception on index out of bounds', function (t) {
   t.plan(2);
-  var fa = new fixedArray(2,3);
+  var fa = new FixedArray(2,3);
   t.throws(function(){fa.get(2,3);});
   t.throws(function(){fa.set(-1,-1);});
 });
 
 test('sameSize',function (t) {
   t.plan(3);
-  var fa = new fixedArray(2,2);
-  var faSameSize = new fixedArray(2,2);
-  var faNotSameSize = new fixedArray(2,3);
+  var fa = new FixedArray(2,2);
+  var faSameSize = new FixedArray(2,2);
+  var faNotSameSize = new FixedArray(2,3);
   var nonfa = [2,2,2,2];
 
   t.true(fa.sameSize(faSameSize));
@@ -97,7 +97,7 @@ test('sameSize',function (t) {
 
 test('get correct number of neighbours',function (t) {
   t.plan(8);
-  var fa = new fixedArray(9,10);
+  var fa = new FixedArray(9,10);
   var treatMeLikeANumber = 2;
   t.equal(fa.getNeighbours(5,5).length,8);
   t.equal(fa.getNeighbours(0,0).length,3);
@@ -111,7 +111,7 @@ test('get correct number of neighbours',function (t) {
 
 test('areNeighbors',function (t) {
   t.plan(6);
-  var fa = new fixedArray(10,10);
+  var fa = new FixedArray(10,10);
   t.true(fa.areNeighbours(0,0,1,1));
   t.false(fa.areNeighbours(0,0,2,2));
   t.true(fa.areNeighbours(0,0,2,2,2));
@@ -122,7 +122,7 @@ test('areNeighbors',function (t) {
 
 test('pushRow',function (t) {
   t.plan(4);
-  var fa = new fixedArray(2,3);
+  var fa = new FixedArray(2,3);
   t.equal(fa.pushRow([1,2,3],[1,2]),4);
   t.equal(fa.get(3,2),undefined);
   t.throws(function(){fa.pushRow([1,2,3,4]);});
